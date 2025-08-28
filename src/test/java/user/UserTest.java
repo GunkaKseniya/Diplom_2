@@ -20,7 +20,6 @@ public class UserTest {
         }
     }
 
-
     @Step("Создание рандомного пользователя")
     public void createRandomUser() {
         user = generator.genericRandom();

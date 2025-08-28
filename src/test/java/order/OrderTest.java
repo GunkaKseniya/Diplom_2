@@ -61,5 +61,4 @@ public class OrderTest {
         ValidatableResponse creationResponse = client.getOrderWithoutAutorization();
         check.getOrderWithoutAutorization(creationResponse);
     }
-
 }
