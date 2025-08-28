@@ -16,7 +16,6 @@ public class OrderAssertions {
                 .statusCode(HTTP_OK);
     }
 
-
     @Step ("Заказ не создан без авторизации")
     public void createOrderWithAuthorizationUnSuccessfully(ValidatableResponse response) {
         response.assertThat()
@@ -40,5 +39,4 @@ public class OrderAssertions {
                 .and()
                 .statusCode(HTTP_UNAUTHORIZED);
     }
-
 }
