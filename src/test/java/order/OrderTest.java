@@ -10,7 +10,7 @@ public class OrderTest {
 
     private final OrderAssertions check = new OrderAssertions();
     private final OrderClient client = new OrderClient();
-    private final OrderGenerator generator = new OrderGenerator();
+    private final OrderGenerate generator = new OrderGenerate();
     Order order;
     UserTest userTest = new UserTest();
 
