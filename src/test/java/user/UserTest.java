@@ -20,7 +20,6 @@ public class UserTest {
         }
     }
 
-
     @Step("Создание рандомного пользователя")
     public void createRandomUser() {
         user = generator.genericRandom();
@@ -118,7 +117,7 @@ public class UserTest {
     public void unsuccessfulChangeUserFields() {
         createRandomUser();
         user = generator.generic();
-        ValidatableResponse changeUserFieldsResponse = client.changeUserFieldsWithoutAutorization(user);
+        ValidatableResponse changeUserFieldsResponse = client.changeUserFieldsWithoutAuthorization(user);
         check.authorizedUserChangeFieldsUnsuccessful(changeUserFieldsResponse);
     }
 }

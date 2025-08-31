@@ -71,5 +71,4 @@ public class UserAssertions {
                 .and()
                 .statusCode(HTTP_UNAUTHORIZED);
     }
-
 }

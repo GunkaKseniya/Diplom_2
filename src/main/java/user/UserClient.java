@@ -58,7 +58,7 @@ public class UserClient extends Client {
     }
 
     @Step ("Изменение данных пользователя без авторизации")
-    public ValidatableResponse changeUserFieldsWithoutAutorization(User user) {
+    public ValidatableResponse changeUserFieldsWithoutAuthorization(User user) {
         return getRequestSpecification()
                 .body(user)
                 .when()
