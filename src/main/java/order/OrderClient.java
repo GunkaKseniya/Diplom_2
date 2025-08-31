@@ -9,8 +9,8 @@ public class OrderClient extends Client {
     public static final String INGREDIENTS = "/ingredients";
     public static final String ORDERS = "/orders";
 
-    @Step ("Создание заказа с авторизацией и валидными ингредиентами")
-    public ValidatableResponse createWithAutorizationAndValidateIngredients(String token, Order order) {
+    @Step("Создание заказа с авторизацией и валидными ингредиентами")
+    public ValidatableResponse createWithAuthorizationAndValidateIngredients(String token, Order order) {
         return getRequestSpecification()
                 .header("Authorization", token)
                 .body(order)
@@ -19,11 +19,10 @@ public class OrderClient extends Client {
                 .then()
                 .log()
                 .all();
-
     }
 
-    @Step ("Создание заказа без авторизации")
-    public ValidatableResponse createWithoutAutorization(Order order) {
+    @Step("Создание заказа без авторизации")
+    public ValidatableResponse createWithoutAuthorization(Order order) {
         return getRequestSpecification()
                 .body(order)
                 .when()
@@ -31,11 +30,10 @@ public class OrderClient extends Client {
                 .then()
                 .log()
                 .all();
-
     }
 
-    @Step ("Создание заказа с авторизацией и невалидными ингредиентами")
-    public ValidatableResponse createWithAutorizationAndUnValidateIngredients(String token, Order order) {
+    @Step("Создание заказа с авторизацией и невалидными ингредиентами")
+    public ValidatableResponse createWithAuthorizationAndUnValidateIngredients(String token, Order order) {
         return getRequestSpecification()
                 .header("Authorization", token)
                 .body(order)
@@ -44,11 +42,10 @@ public class OrderClient extends Client {
                 .then()
                 .log()
                 .all();
-
     }
 
-    @Step ("Создание заказа с авторизацией и без ингредиентов")
-    public ValidatableResponse createWithAutorizationAndWithoutIngredients(String token) {
+    @Step("Создание заказа с авторизацией и без ингредиентов")
+    public ValidatableResponse createWithAuthorizationAndWithoutIngredients(String token) {
         return getRequestSpecification()
                 .header("Authorization", token)
                 .when()
@@ -56,11 +53,10 @@ public class OrderClient extends Client {
                 .then()
                 .log()
                 .all();
-
     }
 
-    @Step ("Получение заказа с авторизацией")
-    public ValidatableResponse getOrderWithAutorization(String token) {
+    @Step("Получение заказа с авторизацией")
+    public ValidatableResponse getOrderWithAuthorization(String token) {
         return getRequestSpecification()
                 .header("Authorization", token)
                 .when()
@@ -68,18 +64,15 @@ public class OrderClient extends Client {
                 .then()
                 .log()
                 .all();
-
     }
 
-    @Step ("Получение заказа без авторизации")
-    public ValidatableResponse getOrderWithoutAutorization() {
+    @Step("Получение заказа без авторизации")
+    public ValidatableResponse getOrderWithoutAuthorization() {
         return getRequestSpecification()
                 .when()
                 .get(ORDERS)
                 .then()
                 .log()
                 .all();
-
     }
-
 }

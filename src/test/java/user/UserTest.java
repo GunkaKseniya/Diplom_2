@@ -117,7 +117,7 @@ public class UserTest {
     public void unsuccessfulChangeUserFields() {
         createRandomUser();
         user = generator.generic();
-        ValidatableResponse changeUserFieldsResponse = client.changeUserFieldsWithoutAutorization(user);
+        ValidatableResponse changeUserFieldsResponse = client.changeUserFieldsWithoutAuthorization(user);
         check.authorizedUserChangeFieldsUnsuccessful(changeUserFieldsResponse);
     }
 }
